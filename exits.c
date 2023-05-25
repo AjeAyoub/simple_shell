@@ -1,77 +1,68 @@
 #include "shell.h"
 
 /**
- *strncpy copie a string
- *@dest : the destination string to be copied to.
- *
- *@src : the source string.
- * 
- *@n : the amount of characters to be copied.
-
- *Return : the concatenated string.
+ * _strncpy - copies a string
+ * @dest: The destination string to be copied to
+ * @src: The source string
+ * @n: The number of characters to be copied
+ * Return: The concatenated string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int j, k;
+	int ii, jj;
 	char *s = dest;
 
-	j = 0;
-	while (src[j] != '\0' && j < n - 1)
+	ii = 0;
+	while (src[ii] != '\0' && ii < n - 1)
 	{
-		dest[j] = src[j];
-		j++;
+		dest[ii] = src[ii];
+		ii++;
 	}
-	if (j < n)
+	if (ii < n)
 	{
-		k = j;
-		while (k < n)
+		jj = ii;
+		while (jj < n)
 		{
-			dest[k] = '\0';
-			k++;
+			dest[jj] = '\0';
+			jj++;
 		}
 	}
 	return (s);
 }
 
 /**
- *strncat concatenates two strings.
-
- *@dest : the first string.
-
- *@src : the second string.
-
- *@n : the amount of bytes to be maximally used.
-
- *Return : the concatenated string.
+ * _strncat - concatenates two strings
+ * @dest: The first string
+ * @src: The second string
+ * @n: The maximum number of bytes to be used
+ * Return: The concatenated string
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int k, l;
+	int ii, jj;
 	char *s = dest;
 
-	j = 0;
-	k = 0;
-	while (dest[j] != '\0')
-		j++;
-	while (src[k] != '\0' && k < n)
+	ii = 0;
+	jj = 0;
+	while (dest[ii] != '\0')
+		ii++;
+	while (src[jj] != '\0' && jj < n)
 	{
-		dest[j] = src[k];
-		j++;
-		k++;
+		dest[ii] = src[jj];
+		ii++;
+		jj++;
 	}
-	if (k < n)
-		dest[j] = '\0';
+	if (jj < n)
+		dest[ii] = '\0';
 	return (s);
 }
 
 /**
- *
- *strchr locates a character in string
-
- *@s :  string to be a parsed.
-
- *@c : character to look for.
- *Return :(s) a pointer to the memory area s.
+ * _strchr - locates a character in a string
+ * @s: The string to be parsed
+ * @c: The character to look for
+ * Return: A pointer to the memory area s, or NULL if the character
+ * is not found
  */
 char *_strchr(char *s, char c)
 {
