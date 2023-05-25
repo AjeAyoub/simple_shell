@@ -88,13 +88,13 @@ int replace_alias(info_t *info)
 		if (!node)
 			return (0);
 		free(info->argv[0]);
-		p = _strchr(node->str, '=');
-		if (!p)
+		pp = _strchr(node->str, '=');
+		if (!pp)
 			return (0);
-		p = _strdup(p + 1);
-		if (!p)
+		pp = _strdup(pp + 1);
+		if (!pp)
 			return (0);
-		info->argv[0] = p;
+		info->argv[0] = pp;
 	}
 	return (1);
 }
