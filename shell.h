@@ -12,6 +12,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
+ssize_t read_textfile(const char *filename, size_t letters);
+
 /* for read/write buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
