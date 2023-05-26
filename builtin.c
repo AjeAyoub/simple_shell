@@ -41,7 +41,7 @@ int _mycd(info_t *info)
 	char *ss, *dirr, buffer[1024];
 	int chdir_rett;
 
-	s = getcwd(buffer, 1024);
+	ss = getcwd(buffer, 1024);
 	if (!ss)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
 	if (!info->argv[1])
@@ -57,7 +57,7 @@ int _mycd(info_t *info)
 	{
 		if (!_getenv(info, "OLDPWD="))
 		{
-			_puts(s);
+			_puts(ss);
 			_putchar('\n');
 			return (1);
 		}

@@ -142,11 +142,11 @@ int delete_node_at_index(list_t **head, unsigned int index)
  */
 void free_list(list_t **head_ptr)
 {
-	list_t *node, *next_nod, *headd;
+	list_t *node, *next_nod, *head;
 
 	if (!head_ptr || !*head_ptr)
 		return;
-	headd = *head_ptr;
+	head = *head_ptr;
 	node = head;
 	while (node)
 	{

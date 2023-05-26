@@ -32,7 +32,7 @@ char **strtow(char *str, char *d)
 		kk = 0;
 		while (!is_delim(str[ii + kk], d) && str[ii + kk])
 			kk++;
-		s[jj] = malloc((kk + 1) * sizeof(char));
+		ss[jj] = malloc((kk + 1) * sizeof(char));
 		if (!ss[jj])
 		{
 			for (kk = 0; kk < jj; kk++)
@@ -41,10 +41,10 @@ char **strtow(char *str, char *d)
 			return (NULL);
 		}
 		for (mm = 0; mm < kk; mm++)
-			s[jj][mm] = str[ii++];
-		s[jj][mm] = '\0';
+		ss[jj][mm] = str[ii++];
+		ss[jj][mm] = '\0';
 	}
-	s[jj] = NULL;
+	ss[jj] = NULL;
 	return (ss);
 }
 
@@ -68,7 +68,7 @@ char **strtow2(char *str, char d)
 			numwords++;
 	if (numwords == 0)
 		return (NULL);
-	s = malloc((1 + numwords) * sizeof(char *));
+	ss = malloc((1 + numwords) * sizeof(char *));
 	if (!ss)
 		return (NULL);
 	for (ii = 0, jj = 0; jj < numwords; jj++)
@@ -78,7 +78,7 @@ char **strtow2(char *str, char d)
 		kk = 0;
 		while (str[ii + kk] != d && str[ii + kk] && str[ii + kk] != d)
 			kk++;
-		s[jj] = malloc((kk + 1) * sizeof(char));
+		ss[jj] = malloc((kk + 1) * sizeof(char));
 		if (!ss[jj])
 		{
 			for (kk = 0; kk < jj; kk++)
@@ -90,7 +90,7 @@ char **strtow2(char *str, char d)
 			ss[jj][mm] = str[ii++];
 		ss[jj][mm] = '\0';
 	}
-	s[jj] = NULL;
+	ss[jj] = NULL;
 	return (ss);
 }
 
